@@ -1,4 +1,1989 @@
-<header class="site-header">
-	<div class="container">
-		<a herf="/" class="logo">
-			<omg scr="logo.png">
+```html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Современная стоматологическая клиника. Лечение зубов, имплантация, эстетическая стоматология и профессиональная гигиена.">
+  <title>DentaNova — современная стоматология</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #147d78;
+      --primary-dark: #0d5f5b;
+      --accent: #dff5f1;
+      --cream: #f7faf9;
+      --white: #ffffff;
+      --text: #172322;
+      --muted: #6c7b79;
+      --border: #e4ecea;
+      --shadow: 0 20px 60px rgba(20, 65, 61, 0.10);
+      --radius: 24px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+       /*голова*/
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(228,236,234,0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 21px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 13px;
+      background: var(--primary);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 21px;
+      box-shadow: 0 8px 20px rgba(20,125,120,0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #465553;
+    }
+
+    .nav-links a {
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .header-phone {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .phone-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+    }
+
+    .mobile-menu {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /*кнопки*/
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 23px;
+      border-radius: 13px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 14px;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 12px 25px rgba(20,125,120,0.20);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 16px 30px rgba(20,125,120,0.28);
+    }
+
+    .btn-light {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /*hero*/
+
+    .hero {
+      padding: 155px 0 85px;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(196,239,233,.65), transparent 28%),
+        linear-gradient(180deg, #f5fbfa 0%, #ffffff 100%);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.03fr .97fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      background: var(--accent);
+      color: var(--primary-dark);
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin-bottom: 20px;
+    }
+
+    .eyebrow span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--primary);
+    }
+
+    .hero h1 {
+      max-width: 650px;
+      font-size: clamp(44px, 5vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 em {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .hero-info {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .avatars {
+      display: flex;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 3px solid white;
+      margin-left: -8px;
+      object-fit: cover;
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+    }
+
+    .rating strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .rating small {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 590px;
+      object-fit: cover;
+      border-radius: 35px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card {
+      position: absolute;
+      bottom: 28px;
+      left: -30px;
+      background: white;
+      padding: 18px 21px;
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(26,69,66,.14);
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 210px;
+    }
+
+    .floating-icon {
+      width: 43px;
+      height: 43px;
+      border-radius: 12px;
+      background: var(--accent);
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 20px;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .floating-card span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /*stats*/
+
+    .stats {
+      padding: 0 0 80px;
+    }
+
+    .stats-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--text);
+      color: white;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .stat {
+      padding: 31px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      font-size: 31px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: #a9b7b5;
+      font-size: 12px;
+    }
+
+    /*selection*/
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 4vw, 50px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      max-width: 620px;
+    }
+
+    .section-heading p {
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /*servises*/
+
+    .services {
+      background: var(--cream);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--accent);
+      color: var(--primary);
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+      font-size: 19px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 23px;
+    }
+
+    .service-link {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /*о нас*/
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .about-image {
+      height: 560px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+
+    .about-content h2 {
+      font-size: clamp(35px, 4vw, 53px);
+      line-height: 1.1;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .about-content > p {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 32px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .check {
+      width: 27px;
+      height: 27px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+    }
+
+    /*доктора*/
+
+    .doctors {
+      background: var(--cream);
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .doctor-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .doctor-card img {
+      width: 100%;
+      height: 370px;
+      object-fit: cover;
+    }
+
+    .doctor-info {
+      padding: 23px;
+    }
+
+    .doctor-info h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .doctor-info p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /*prickting*/
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 31px;
+    }
+
+    .price-card.featured {
+      background: var(--text);
+      color: white;
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .price-card h3 {
+      font-size: 18px;
+      margin-bottom: 13px;
+    }
+
+    .price {
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 25px;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .featured .price span {
+      color: #9caead;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 27px;
+    }
+
+    .price-list li {
+      list-style: none;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .featured .price-list li {
+      color: #b6c1c0;
+    }
+
+    .price-list li::before {
+      content: "✓";
+      color: var(--primary);
+      margin-right: 9px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       REVIEWS
+    ========================= */
+
+    .reviews {
+      background: var(--cream);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .review {
+      background: white;
+      border-radius: 23px;
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .stars {
+      color: #f0a94b;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    .review p {
+      color: #52615f;
+      font-size: 14px;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-author img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .review-author strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .review-author span {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact {
+      padding-bottom: 100px;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      background: var(--text);
+      color: white;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+
+    .contact-info {
+      padding: 50px;
+    }
+
+    .contact-info h2 {
+      font-size: 42px;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 17px;
+    }
+
+    .contact-info > p {
+      color: #aab8b6;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+      background: rgba(255,255,255,.08);
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .contact-item span {
+      color: #aab8b6;
+      font-size: 12px;
+    }
+
+    .form {
+      background: white;
+      color: var(--text);
+      padding: 50px;
+    }
+
+    .form h3 {
+      font-size: 23px;
+      margin-bottom: 7px;
+    }
+
+    .form > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .field input,
+    .field textarea,
+    .field select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 11px;
+      outline: none;
+      background: #fbfdfc;
+      color: var(--text);
+      transition: border .2s;
+    }
+
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus {
+      border-color: var(--primary);
+    }
+
+    .field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form .btn {
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .copyright {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .socials {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: var(--cream);
+      display: grid;
+      place-items: center;
+      font-size: 13px;
+      font-weight: 800;
+      transition: background .2s;
+    }
+
+    .social:hover {
+      background: var(--accent);
+      color: var(--primary);
+    }
+
+    /* =========================
+       MODAL
+    ========================= */
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,31,30,.65);
+      backdrop-filter: blur(5px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 2000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(480px, 100%);
+      background: white;
+      border-radius: 25px;
+      padding: 35px;
+      position: relative;
+      text-align: center;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      border: 0;
+      background: #f1f5f4;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .success-icon {
+      width: 65px;
+      height: 65px;
+      margin: 0 auto 18px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 28px;
+    }
+
+    .modal-content h3 {
+      font-size: 25px;
+      margin-bottom: 9px;
+    }
+
+    .modal-content p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .fade-up {
+      animation: fadeUp .8s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+      .nav-links,
+      .header-phone {
+        display: none;
+      }
+
+      .mobile-menu {
+        display: block;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        height: 500px;
+      }
+
+      .floating-card {
+        left: 20px;
+      }
+
+      .services-grid,
+      .doctors-grid,
+      .pricing-grid,
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        height: 450px;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      header {
+        padding: 12px 0;
+      }
+
+      .hero {
+        padding-top: 125px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-image {
+        height: 410px;
+        border-radius: 24px;
+      }
+
+      .floating-card {
+        bottom: 15px;
+        left: 12px;
+      }
+
+      .stats-box {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+
+      .stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      section {
+        padding: 70px 0;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 15px;
+      }
+
+      .services-grid,
+      .doctors-grid,
+      .pricing-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .contact-info,
+      .form {
+        padding: 30px 23px;
+      }
+
+      .contact-info h2 {
+        font-size: 34px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+        <span class="logo-mark">✦</span>
+        DentaNova
+      </a>
+
+      <nav class="nav-links">
+        <a href="#services">Услуги</a>
+        <a href="#about">О клинике</a>
+        <a href="#doctors">Врачи</a>
+        <a href="#prices">Цены</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <a href="#contacts" class="header-phone">
+        <span class="phone-icon">☎</span>
+        +7 (999) 123-45-67
+      </a>
+
+      <button class="mobile-menu" onclick="toggleMenu()">☰</button>
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+
+        <div class="fade-up">
+
+          <div class="eyebrow">
+            <span></span>
+            Современная стоматология
+          </div>
+
+          <h1>
+            Здоровая улыбка,
+            <em>которой хочется</em>
+            улыбаться
+          </h1>
+
+          <p class="hero-description">
+            Бережная стоматология нового поколения.
+            Лечим зубы без стресса, используем современные технологии
+            и создаём результат, которым вы будете довольны.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#contacts" class="btn btn-primary">
+              Записаться на приём →
+            </a>
+
+            <a href="#services" class="btn btn-light">
+              Наши услуги
+            </a>
+          </div>
+
+          <div class="hero-info">
+
+            <div class="avatars">
+              <img class="avatar"
+                   src="https://i.pravatar.cc/100?img=47"
+                   alt="Пациент">
+
+              <img class="avatar"
+                   src="https://i.pravatar.cc/100?img=32"
+                   alt="Пациент">
+
+              <img class="avatar"
+                   src="https://i.pravatar.cc/100?img=12"
+                   alt="Пациент">
+            </div>
+
+            <div class="rating">
+              <strong>★★★★★ 4.9 / 5</strong>
+              <small>Более 2 000 довольных пациентов</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="hero-image-wrap">
+
+          <img
+            class="hero-image"
+            src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=85"
+            alt="Стоматологическая клиника">
+
+          <div class="floating-card">
+            <div class="floating-icon">✓</div>
+
+            <div>
+              <strong>Безболезненное лечение</strong>
+              <span>Современная анестезия</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         STATS
+    ========================== -->
+
+    <section class="stats">
+      <div class="container">
+
+        <div class="stats-box">
+
+          <div class="stat">
+            <strong>12+</strong>
+            <span>лет опыта</span>
+          </div>
+
+          <div class="stat">
+            <strong>25k+</strong>
+            <span>пациентов</span>
+          </div>
+
+          <div class="stat">
+            <strong>18</strong>
+            <span>специалистов</span>
+          </div>
+
+          <div class="stat">
+            <strong>4.9</strong>
+            <span>средняя оценка</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section class="services" id="services">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">
+              <span></span>
+              Наши услуги
+            </div>
+
+            <h2>
+              Всё необходимое
+              для здоровой улыбки
+            </h2>
+          </div>
+
+          <p>
+            От профилактики до сложного лечения —
+            заботимся о здоровье ваших зубов на каждом этапе.
+          </p>
+        </div>
+
+
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon">🦷</div>
+            <h3>Лечение зубов</h3>
+            <p>
+              Лечение кариеса, пульпита и других заболеваний
+              с использованием современных технологий.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-icon">✨</div>
+            <h3>Эстетическая стоматология</h3>
+            <p>
+              Виниры, реставрация и отбеливание
+              для естественной и красивой улыбки.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-icon">◉</div>
+            <h3>Имплантация</h3>
+            <p>
+              Восстановление утраченных зубов
+              с помощью надёжных имплантационных систем.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-icon">◎</div>
+            <h3>Профессиональная гигиена</h3>
+            <p>
+              Комплексная чистка зубов и профилактика
+              заболеваний полости рта.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-icon">⌁</div>
+            <h3>Ортодонтия</h3>
+            <p>
+              Исправление прикуса с помощью брекетов
+              и современных прозрачных капп.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+
+          <article class="service-card">
+            <div class="service-icon">♡</div>
+            <h3>Детская стоматология</h3>
+            <p>
+              Деликатное лечение зубов детей
+              в спокойной и дружелюбной атмосфере.
+            </p>
+            <a href="#contacts" class="service-link">Подробнее →</a>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="container about-grid">
+
+        <img
+          class="about-image"
+          src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=85"
+          alt="Интерьер стоматологической клиники">
+
+        <div class="about-content">
+
+          <div class="eyebrow">
+            <span></span>
+            Почему DentaNova
+          </div>
+
+          <h2>
+            Стоматология,
+            в которой
+            комфортно
+          </h2>
+
+          <p>
+            Мы объединили опыт врачей, современное оборудование
+            и внимательное отношение к пациентам, чтобы посещение
+            стоматолога стало максимально комфортным.
+          </p>
+
+          <div class="check-list">
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              Современное оборудование
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              Врачи с опытом от 8 лет
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              Безболезненное лечение
+            </div>
+
+            <div class="check-item">
+              <span class="check">✓</span>
+              Гарантия на выполненные работы
+            </div>
+
+          </div>
+
+          <a href="#contacts" class="btn btn-primary">
+            Записаться на консультацию →
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         DOCTORS
+    ========================== -->
+
+    <section class="doctors" id="doctors">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <div class="eyebrow">
+              <span></span>
+              Наша команда
+            </div>
+
+            <h2>
+              Врачи, которым
+              можно доверять
+            </h2>
+          </div>
+
+          <p>
+            Опытные специалисты, которые постоянно повышают
+            квалификацию и используют современные методы лечения.
+          </p>
+
+        </div>
+
+
+        <div class="doctors-grid">
+
+          <article class="doctor-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85"
+              alt="Анна Петрова">
+
+            <div class="doctor-info">
+              <h3>Анна Петрова</h3>
+              <p>Главный врач · Стоматолог-терапевт</p>
+            </div>
+
+          </article>
+
+
+          <article class="doctor-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=85"
+              alt="Максим Орлов">
+
+            <div class="doctor-info">
+              <h3>Максим Орлов</h3>
+              <p>Стоматолог-хирург · Имплантолог</p>
+            </div>
+
+          </article>
+
+
+          <article class="doctor-card">
+
+            <img
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=800&q=85"
+              alt="Елена Смирнова">
+
+            <div class="doctor-info">
+              <h3>Елена Смирнова</h3>
+              <p>Стоматолог · Ортодонт</p>
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PRICES
+    ========================== -->
+
+    <section id="prices">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <div class="eyebrow">
+              <span></span>
+              Стоимость
+            </div>
+
+            <h2>
+              Простые и понятные цены
+            </h2>
+          </div>
+
+          <p>
+            Финальная стоимость лечения определяется после консультации
+            и диагностики.
+          </p>
+
+        </div>
+
+
+        <div class="pricing-grid">
+
+          <div class="price-card">
+
+            <h3>Профилактика</h3>
+
+            <div class="price">
+              от 3 500 ₽
+              <span>/ процедура</span>
+            </div>
+
+            <ul class="price-list">
+              <li>Профессиональная чистка</li>
+              <li>Осмотр врача</li>
+              <li>Рекомендации по уходу</li>
+              <li>Диагностика</li>
+            </ul>
+
+            <a href="#contacts" class="btn btn-light">
+              Записаться
+            </a>
+
+          </div>
+
+
+          <div class="price-card featured">
+
+            <h3>Лечение</h3>
+
+            <div class="price">
+              от 6 900 ₽
+              <span>/ зуб</span>
+            </div>
+
+            <ul class="price-list">
+              <li>Анестезия</li>
+              <li>Лечение кариеса</li>
+              <li>Современная пломба</li>
+              <li>Контрольный осмотр</li>
+            </ul>
+
+            <a href="#contacts" class="btn btn-primary">
+              Записаться
+            </a>
+
+          </div>
+
+
+          <div class="price-card">
+
+            <h3>Имплантация</h3>
+
+            <div class="price">
+              от 39 900 ₽
+              <span>/ имплант</span>
+            </div>
+
+            <ul class="price-list">
+              <li>Консультация имплантолога</li>
+              <li>Диагностика</li>
+              <li>Установка импланта</li>
+              <li>План лечения</li>
+            </ul>
+
+            <a href="#contacts" class="btn btn-light">
+              Узнать подробнее
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         REVIEWS
+    ========================== -->
+
+    <section class="reviews" id="reviews">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div>
+            <div class="eyebrow">
+              <span></span>
+              Отзывы
+            </div>
+
+            <h2>
+              Нам доверяют
+              тысячи пациентов
+            </h2>
+          </div>
+
+          <p>
+            Для нас самое важное — чтобы после лечения
+            пациенты возвращались с улыбкой.
+          </p>
+
+        </div>
+
+
+        <div class="reviews-grid">
+
+          <article class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+              Очень приятная клиника. Врач всё подробно объяснил,
+              лечение прошло абсолютно спокойно и без боли.
+              Теперь буду ходить только сюда.
+            </p>
+
+            <div class="review-author">
+
+              <img
+                src="https://i.pravatar.cc/100?img=44"
+                alt="Мария">
+
+              <div>
+                <strong>Мария К.</strong>
+                <span>Пациент клиники</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+              Наконец-то нашёл стоматологию, куда не страшно
+              приходить. Отличный сервис, современное оборудование
+              и очень внимательные врачи.
+            </p>
+
+            <div class="review-author">
+
+              <img
+                src="https://i.pravatar.cc/100?img=11"
+                alt="Александр">
+
+              <div>
+                <strong>Александр Р.</strong>
+                <span>Пациент клиники</span>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+              Делала профессиональную чистку и отбеливание.
+              Результат превзошёл ожидания. Отдельное спасибо
+              доктору Елене за внимательность.
+            </p>
+
+            <div class="review-author">
+
+              <img
+                src="https://i.pravatar.cc/100?img=25"
+                alt="Ольга">
+
+              <div>
+                <strong>Ольга С.</strong>
+                <span>Пациент клиники</span>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contacts">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <div class="contact-info">
+
+            <div class="eyebrow">
+              <span></span>
+              Контакты
+            </div>
+
+            <h2>
+              Готовы начать
+              заботиться
+              об улыбке?
+            </h2>
+
+            <p>
+              Оставьте заявку — администратор свяжется
+              с вами и подберёт удобное время.
+            </p>
+
+
+            <div class="contact-item">
+
+              <div class="contact-item-icon">☎</div>
+
+              <div>
+                <strong>+7 (999) 123-45-67</strong>
+                <span>Ежедневно с 9:00 до 21:00</span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-item-icon">⌖</div>
+
+              <div>
+                <strong>Москва, ул. Большая 24</strong>
+                <span>5 минут от метро</span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <div class="contact-item-icon">✉</div>
+
+              <div>
+                <strong>hello@dentanova.ru</strong>
+                <span>Ответим в течение рабочего дня</span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <form class="form" id="appointmentForm">
+
+            <h3>Записаться на приём</h3>
+
+            <p>
+              Заполните форму, и мы свяжемся с вами.
+            </p>
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label for="name">Ваше имя</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Иван Иванов"
+                  required>
+              </div>
+
+
+              <div class="field">
+                <label for="phone">Телефон</label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="+7 (999) 000-00-00"
+                  required>
+              </div>
+
+
+              <div class="field">
+                <label for="service">Услуга</label>
+
+                <select id="service">
+                  <option>Первичная консультация</option>
+                  <option>Лечение зубов</option>
+                  <option>Профессиональная чистка</option>
+                  <option>Имплантация</option>
+                  <option>Ортодонтия</option>
+                  <option>Эстетическая стоматология</option>
+                </select>
+
+              </div>
+
+
+              <div class="field">
+                <label for="date">Желаемая дата</label>
+
+                <input
+                  id="date"
+                  type="date">
+              </div>
+
+
+              <div class="field full">
+                <label for="message">Комментарий</label>
+
+                <textarea
+                  id="message"
+                  placeholder="Например: хочу записаться на консультацию"></textarea>
+              </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Отправить заявку →
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div class="copyright">
+        © 2026 DentaNova. Все права защищены.
+      </div>
+
+      <div class="socials">
+
+        <a href="#" class="social">VK</a>
+        <a href="#" class="social">TG</a>
+        <a href="#" class="social">IG</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       SUCCESS MODAL
+  ========================== -->
+
+  <div class="modal" id="successModal">
+
+    <div class="modal-content">
+
+      <button
+        class="close-modal"
+        onclick="closeModal()">
+        ×
+      </button>
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h3>Заявка отправлена!</h3>
+
+      <p>
+        Спасибо! Наш администратор свяжется с вами
+        в ближайшее время для подтверждения записи.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    // Плавная прокрутка
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+      link.addEventListener("click", function(e) {
+
+        const target = document.querySelector(
+          this.getAttribute("href")
+        );
+
+        if (target) {
+          e.preventDefault();
+
+          target.scrollIntoView({
+            behavior: "smooth"
+          });
+        }
+
+      });
+
+    });
+
+
+    // Мобильное меню
+    function toggleMenu() {
+
+      const nav = document.querySelector(".nav-links");
+
+      if (nav.style.display === "flex") {
+
+        nav.style.display = "none";
+
+      } else {
+
+        nav.style.display = "flex";
+
+        nav.style.position = "absolute";
+        nav.style.top = "75px";
+        nav.style.left = "14px";
+        nav.style.right = "14px";
+        nav.style.padding = "20px";
+        nav.style.background = "white";
+        nav.style.borderRadius = "18px";
+        nav.style.boxShadow = "0 20px 50px rgba(0,0,0,.12)";
+        nav.style.flexDirection = "column";
+        nav.style.alignItems = "flex-start";
+
+      }
+
+    }
+
+
+    // Форма записи
+    const form = document.getElementById("appointmentForm");
+    const modal = document.getElementById("successModal");
+
+    form.addEventListener("submit", function(e) {
+
+      e.preventDefault();
+
+      modal.classList.add("active");
+
+      form.reset();
+
+    });
+
+
+    // Закрытие модального окна
+    function closeModal() {
+
+      modal.classList.remove("active");
+
+    }
+
+
+    // Закрытие по клику на фон
+    modal.addEventListener("click", function(e) {
+
+      if (e.target === modal) {
+        closeModal();
+      }
+
+    });
+
+
+    // Закрытие по Escape
+    document.addEventListener("keydown", function(e) {
+
+      if (e.key === "Escape") {
+        closeModal();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
+```
+ email, CRM или backend.
